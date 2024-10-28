@@ -76,12 +76,14 @@ jobs:
           ZOLA_CACHEDIR: ${{ runner.temp }}/zola_cache
           ZOLA_ENVIRONMENT: production
         run: |
+          cd ssg_blog/
           zola build \
             --base-url "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          # path: ./public
+          path: ./ssg_blog/public
 
   # Deployment job
   deploy:
