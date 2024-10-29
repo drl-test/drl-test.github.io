@@ -1,0 +1,3 @@
+[submodule "ssg_blog/themes/apollo"]
+	path = ssg_blog/themes/apollo
+	url = https://github.com/not-matthias/apollo
