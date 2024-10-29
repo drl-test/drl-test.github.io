@@ -21,6 +21,15 @@ highlight_code = true
 [extra]
 # Put all your custom variables here
 
+use_cdn = false
+
+#favicon = "/icon/favicon.png"
+
+comment = true
+
+toc = true
+fancy_code = true
+
 # math related
 #mathjax = true
 #mathjax_dollar_inline_enable = true
@@ -34,8 +43,8 @@ socials = [
 ]
 menu = [
   # Configure menu bar here
-    { name = "/posts", url = "/posts", weight = 1 },
-    { name = "/projects", url = "/projects", weight = 2 },
-    { name = "/tags", url = "/tags", weight = 3 },
-    { name = "/about", url = "/about", weight = 4 },
+  { name = "/posts", url = "/posts", weight = 1 },
+  { name = "/projects", url = "/projects", weight = 2 },
+  { name = "/tags", url = "/tags", weight = 3 },
+  { name = "/about", url = "/about", weight = 4 },
 ]
