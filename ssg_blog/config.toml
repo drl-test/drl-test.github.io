@@ -20,6 +20,13 @@ highlight_code = true
 
 [extra]
 # Put all your custom variables here
+
+# math related
+#mathjax = true
+#mathjax_dollar_inline_enable = true
+katex = true
+
+# theme related
 theme = "toggle"
 socials = [
   # Configure socials here

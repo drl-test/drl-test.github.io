@@ -1,0 +1,99 @@
+
+{# === KATEX === #}
+{% macro katex() %}
+    {#
+        Refs:
+        - <https://katex.org/docs/browser.html#starter-template>
+        - <https://katex.org/docs/browser.html#ecmascript-module>
+        - <https://www.jsdelivr.com/package/npm/katex>
+    #}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+
+    {% if config.extra.katex_auto_render | default(value=true) %}
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script> -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+    <script>
+        // - <https://katex.org/docs/autorender.html>
+        // - <https://katex.org/docs/options>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                // customised options
+                // • auto-render specific keys, e.g.:
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\[', right: '\\]', display: true},
+                    {left: '\\(', right: '\\)', display: false},
+                ],
+                // • rendering keys, e.g.:
+                throwOnError : false
+            });
+        });
+    </script>
+    {% endif %}
+
+
+    <!--
+    <script type="module" type="text/javascript">
+        import katex from 'https://cdn.jsdelivr.net/npm/katex/dist/katex.mjs';
+    </script>
+    <script nomodule defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.css" crossorigin="anonymous">
+    -->
+
+{% endmacro %}
+
+
+
+{# === MATHJAX === #}
+{% macro mathjax() %}
+
+    {% if config.extra.mathjax_dollar_inline_enable | default(value=false) %}
+    <script>
+    {#
+        - <https://docs.mathjax.org/en/latest/web/configuration.html>
+        - <https://docs.mathjax.org/en/latest/options/input/index.html>
+        - <https://docs.mathjax.org/en/latest/options/input/tex.html>
+        - <https://docs.mathjax.org/en/latest/options/input/mathml.html>
+        - <https://docs.mathjax.org/en/latest/options/input/asciimath.html>
+    #}
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']], // start/end delimiter pairs for in-line math
+            displayMath: [ // start/end delimiter pairs for display math
+                ['$$', '$$'],
+                ['\\[', '\\]']
+            ],
+            processEscapes: true, // use \$ to produce a literal dollar sign
+            tags: 'none', // or 'ams' or 'all'
+            formatError:               // function called when TeX syntax errors occur
+                (jax, err) => jax.formatError(err)
+        }
+    };
+    </script>
+    {% endif %}
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        extensions: ["tex2jax.js", "TeX/AMSmath.js"],
+        // jax: ["input/TeX", "output/HTML-CSS"],
+        jax: ["input/TeX", "output/SVG"],
+    })
+    </script>
+
+    <!--
+    <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.min.js">
+    </script>
+    -->
+    <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.min.js">
+    </script>
+
+{% endmacro %}
