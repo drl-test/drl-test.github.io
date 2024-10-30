@@ -3,7 +3,7 @@ title = "Qudruped Demo: CPG Introduction"
 date = "2024-10-29"
 
 [taxonomies]
-tags=["RL", "DRL", "Cartpole"]
+tags=["RL", "DRL", "Quadruped"]
 
 [extra]
 comment = true
