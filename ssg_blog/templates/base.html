@@ -23,7 +23,10 @@
         {% endif %}
 
         {% if show_comment %}
-        <div class="giscus"></div>
+        <div class="giscus">
+            <br/>
+            <p style="color:red; font-size: 120%; margin-bottom: 1px;"><b><i>Comments</i></b></p>
+        </div>
         {% include "_giscus_script.html" %}
         {% endif %}
     </div>
