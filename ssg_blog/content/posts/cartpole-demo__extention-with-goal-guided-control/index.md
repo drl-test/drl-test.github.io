@@ -1,6 +1,7 @@
 +++
 title = "CartPole Demo: Task Extention With Goal-Guided Control"
 date = "2024-10-30"
+updated = "2024-11-03"
 
 [taxonomies]
 tags=["RL", "DRL", "Cartpole"]
@@ -14,6 +15,9 @@ comment = true
 ## Background
 
 In previous blog, we solved the CartPole-V1 task which tries to balance the pole upright by applying force in the left and right direction on the cart. Although this task is successfully solved with DQN and PPO, we can't control where the cart should be when the pole is balanced. In this blog we try to solve this goal-guided CartPole task.
+
+
+<!-- more -->
 
 
 ## Task Definition
@@ -71,6 +75,16 @@ The episode ends if any one of the following occurs:
 
 
 
+## Differences
+
+Compared to the Cartpole-V1 problem, there are some important differences:
+
+- Solution Existence: There May NOT exist a solution for this goal-guided version.
+- Control Complexity: To get close to the goal, there may include complex action sequces like accelerating, decelerating, bootstraping, etc.
+- Implicit Boundary Violation: since more complex actions to take, it's more easy the simulation will stop for voilating the termination condition.
+
+
+
 ## Method
 
 Here we try to solve this task by modifing policy $\pi(s)$ to $\pi(s \vert \text{goal})$ which is conditioned on the specified goal. This design also provides us the ability to control the steady cart position on the fly.
@@ -91,17 +105,17 @@ Here we try to solve this task by modifing policy $\pi(s)$ to $\pi(s \vert \text
 
 - Tests with goal set only when initialized
   <div style="display:flex;justify-content:center;flex-wrap:wrap;border:2px solid red;">
-      <div style="display:flex-inline;width:45%;border:1px solid yellow;text-align:center;">
+      <div style="display:inline-flex;width:45%;border:1px solid yellow;justify-content:center;align-items:center;">
         <video src="vids/cartpole_goal_ppo_sb3_2-episode-0.mp4" type="video/mp4" width=90% autoplay loop muted/>
       </div>
-      <div style="display:flex-inline;width:45%;border:1px solid yellow;text-align:center;">
+      <div style="display:inline-flex;width:45%;border:1px solid yellow;justify-content:center;align-items:center;">
         <video src="vids/cartpole_goal_ppo_sb3_7-episode-0.mp4" type="video/mp4" width=90% autoplay loop muted/>
       </div>
   </div>
 
 - Tests with goal-changed during in-run
   <div style="display:flex;justify-content:center;flex-wrap:wrap;border:2px solid red;">
-      <div style="display:flex-inline;width:45%;border:1px solid yellow;text-align:center;">
+      <div style="display:inline-flex;width:45%;border:1px solid yellow;justify-content:center;align-items:center;">
         <video src="vids/cartpole_goal_ppo_sb3_eval_result.webm" type="video/webm" width=90% controls controlslist="nodownload nofullscreen" autoplay loop muted disablepictureinpicture preload=metadata/>
       </div>
   </div>
