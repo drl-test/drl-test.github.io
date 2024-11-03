@@ -9,7 +9,13 @@ build_search_index = true
 
 # Use Apollo theme
 theme = "apollo"
-taxonomies = [{ name = "tags" }]
+
+
+# <https://www.getzola.org/documentation/content/taxonomies/>
+taxonomies = [
+  { name = "tags" },
+  { name = "years" },
+]
 
 
 [markdown]
@@ -43,6 +49,7 @@ socials = [
 ]
 menu = [
   # Configure menu bar here
+  { name = "/home", url = "/", weight = 0 },
   { name = "/posts", url = "/posts", weight = 1 },
   { name = "/projects", url = "/projects", weight = 2 },
   { name = "/tags", url = "/tags", weight = 3 },
