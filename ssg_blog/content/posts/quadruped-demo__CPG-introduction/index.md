@@ -104,7 +104,7 @@ To map each oscillator's states to corresponding joints command, 2 steps are inc
 1. map leg oscillator's states to corresponding foot position.
 2. calculate leg's joints angle from foot position with inverse kinematics.
 
-Although there is no directly physical connection between leg's CPG parameters $\{r_i, \theta_i, \phi_i\}_{i=0,\dots}^{\{ 1,\dots,4 \}}$ and foot's position $\{x_i, y_i, z_i\}_{i=0,\dots}^{\{ 1,\dots,4 \}}$, one commonly used formulation is as follows:
+Although there is no directly physical connection between leg's CPG parameters ${\\{ r_i, \theta_i, \phi_i \\}}\_{i=0,\dots}^{\\{ 1,\dots,4 \\}}$ and foot's position ${\\{ x_i, y_i, z_i \\}}\_{i=0,\dots}^{\\{ 1,\dots,4 \\}}$, one commonly used formulation is as follows:
 
 {% tex() %}
 $$
