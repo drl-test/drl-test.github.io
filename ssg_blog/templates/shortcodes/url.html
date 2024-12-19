@@ -1,0 +1,10 @@
+{#
+{% set url = get_url(path=path) %}
+{{ get_url(path=path) }}
+
+{{ page.path ~ path }}
+{{ page.relative_path ~ path }}
+{{ page.permalink ~ path }}
+#}
+
+{{ page.permalink ~ path }}
