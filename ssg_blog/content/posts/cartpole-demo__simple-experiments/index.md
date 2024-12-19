@@ -12,13 +12,15 @@ comment = true
 
 
 
+<center>
+<img src="{{ url(path="imgs/cartpole.gif#center") }}" width="50%">
+</center>
+
+
+<!-- more -->
 
 
 ## Task Definition
-
-<center>
-<img src="imgs/cartpole.gif#center" width="50%">
-</center>
 
 The agent has to decide between two actions - moving the cart left or right - so that the pole attached to it stays upright and the cart doesn't move too far away from its origin.
 

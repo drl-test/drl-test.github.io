@@ -11,12 +11,15 @@ comment = true
 
 
 
+<center>
+<img src="{{ url(path="imgs/bipedal_walker.gif") }}" width="50%">
+</center>
+
+
+<!-- more -->
+
 
 ## Task Definition
-
-<center>
-<img src="imgs/bipedal_walker.gif#center" width="50%">
-</center>
 
 This is a 4-joint walker robot environment, the goal is to gain as more points as possible by moving forward to the far end. There are 2 versions to choose from:
 

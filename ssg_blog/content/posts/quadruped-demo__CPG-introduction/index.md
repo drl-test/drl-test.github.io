@@ -20,23 +20,16 @@ For control tasks such as locomotion of bipedal or quadrupedal robots, the actio
 
 CPG assumes each leg's motion follows some rhythmic or quasi-periodic pattern, and divides one full-joints control task into 2(biped)/4(quadruped) leg-joints control tasks, this strategy simplifies the problem and also improves interpretability/controllability.
 
-
-<!-- more -->
-
-
-## Introduction
-
-
 <div style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;border:2px solid red;">
     <div style="display:inline-flex;width:48%;justify-content:center;align-items:center;">
     <video width="90%" controls controlslist="nodownload nofullscreen" autoplay loop muted disablepictureinpicture preload=metadata>
-        <source src="vids/What’s New in Spot (zIdyhGyXcUg)___crop_w2600xh1500_500x300.webm" type="video/webm">
+        <source src="{{ url(path="vids/What’s New in Spot (zIdyhGyXcUg)___crop_w2600xh1500_500x300.webm") }}" type="video/webm">
         Your browser does not support the video tag.
     </video>
     </div>
     <div style="display:inline-flex;width:48%;justify-content:center;align-items:center;">
     <video width="90%" controls controlslist="nodownload nofullscreen" autoplay loop muted disablepictureinpicture preload=metadata>
-        <source src="vids/With you, Spot can [VRm7oRCTkjE]___crop_38-47s.webm" type="video/webm">
+        <source src="{{ url(path="vids/With you, Spot can [VRm7oRCTkjE]___crop_38-47s.webm") }}" type="video/webm">
         Your browser does not support the video tag.
     </video>
     </div>
@@ -50,7 +43,6 @@ CPG assumes each leg's motion follows some rhythmic or quasi-periodic pattern, a
     </div>
 </div>
 
-
 <!--
 <div>
 <iframe width="80%" height="480" src="https://youtube.com/embed/6U-bI3On1Ww?start=106&end=157" title="No Time to Dance | Boston Dynamics" frameborder="0" allow="accelerometer; controls=0; autoplay=0; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -62,6 +54,11 @@ CPG assumes each leg's motion follows some rhythmic or quasi-periodic pattern, a
 </div>
 -->
 
+
+<!-- more -->
+
+
+## Introduction
 
 There are different types of math models for CPG, here in this blog we focus on a specific oscillator model as follows: <cite>[Auke.Ijspeert.Science.2007](#refs)</cite>
 
