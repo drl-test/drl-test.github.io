@@ -51,7 +51,7 @@ menu = [
   # Configure menu bar here
   { name = "/home", url = "/", weight = 0 },
   { name = "/posts", url = "/posts", weight = 1 },
-  { name = "/projects", url = "/projects", weight = 2 },
+  #{ name = "/projects", url = "/projects", weight = 2 },
   { name = "/tags", url = "/tags", weight = 3 },
   { name = "/about", url = "/about", weight = 4 },
 ]
